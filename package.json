@@ -1,0 +1,54 @@
+{
+	"name": "gxerky.run",
+	"version": "0.0.0",
+	"private": true,
+	"dependencies": {
+		"@syncfusion/ej2": "17.4.49",
+		"@syncfusion/ej2-base": "17.4.47",
+		"@syncfusion/ej2-data": "17.4.47",
+		"@syncfusion/ej2-icons": "17.4.47",
+		"@syncfusion/ej2-popups": "17.4.49",
+		"@syncfusion/ej2-react-base": "17.4.49",
+		"@syncfusion/ej2-react-calendars": "17.4.49",
+		"@syncfusion/ej2-react-schedule": "^17.4.47",
+		"@syncfusion/ej2-schedule": "17.4.47",
+		"@types/codemirror": "0.0.56",
+		"@types/marked": "0.3.0",
+		"@types/moment-timezone": "0.5.12",
+		"@types/react": "15.6.28",
+		"@types/react-dom": "15.5.11",
+		"@types/react-router": "4.0.19",
+		"codemirror": "5.51.0",
+		"fuse.js": "3.2.0",
+		"marked": "0.3.19",
+		"moment-timezone": "0.5.27",
+		"react": "16.3.1",
+		"react-dom": "16.3.1",
+		"react-redux": "5.1.2",
+		"react-router": "4.3.1",
+		"react-router-dom": "4.3.0",
+		"tributejs": "3.7.3",
+		"tslib": "1.10.0"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test --env=jsdom",
+		"eject": "react-scripts eject"
+	},
+	"devDependencies": {
+		"react-scripts": "latest"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	}
+}
