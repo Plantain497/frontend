@@ -1,6 +1,6 @@
 {
-	"name": "gxerky.run",
-	"version": "0.0.0",
+	"name": "Plantain",
+	"version": "1.0.0",
 	"private": true,
 	"dependencies": {
 		"@syncfusion/ej2": "17.4.49",
