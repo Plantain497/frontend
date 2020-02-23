@@ -15,7 +15,7 @@ import { extend } from '@syncfusion/ej2-base'
 import { SampleBase } from './SampleBase'
 import { PropertyPane } from './PropertyPane'
 import * as dataSource from './datasource.json'
-import './index.css'
+import './bootstrap4.scss'
 
 /**
  * Schedule events sample
