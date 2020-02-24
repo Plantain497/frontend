@@ -1,7 +1,7 @@
+import { Page } from '@shopify/polaris';
 import React from 'react';
-import {Page} from '@shopify/polaris';
-import {mount} from './tests/utils/react-testing';
 import App from './App';
+import { mount } from './tests/utils/react-testing';
 
 // Sample test to demonstrate how you should test with react-testing & Polaris
 test('renders page', () => {
