@@ -1,0 +1,17 @@
+{
+  "extends": ["tslint-microsoft-contrib"],
+  "defaultSeverity": "warning",
+  "rules": {
+    "no-default-export": true,
+    "no-implicit-dependencies": false,
+    "no-submodule-imports": false,
+    "no-relative-imports": false,
+    "export-name": false,
+    "variable-name": false,
+    "import-name": false,
+    "no-import-side-effect": false
+  },
+  "linterOptions": {
+    "exclude": ["src/serviceWorker.ts"]
+  }
+}

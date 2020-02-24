@@ -37,7 +37,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "tslint --project tsconfig.json --config tslint.json -t stylish -r node_modules/tslint-microsoft-contrib",
+    "lint:fix": "tslint --project tsconfig.json --config tslint.json --fix -t stylish -r node_modules/tslint-microsoft-contrib"
   },
   "browserslist": {
     "production": [
@@ -52,6 +54,9 @@
     ]
   },
   "devDependencies": {
-    "@shopify/react-testing": "^1.8.8"
+    "@shopify/react-testing": "^1.8.8",
+    "tslint": "^6.0.0",
+    "tslint-microsoft-contrib": "^6.2.0",
+    "tslint-react": "^4.2.0"
   }
 }
