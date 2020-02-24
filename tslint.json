@@ -9,7 +9,8 @@
     "export-name": false,
     "variable-name": false,
     "import-name": false,
-    "no-import-side-effect": false
+    "no-import-side-effect": false,
+    "align": false
   },
   "linterOptions": {
     "exclude": ["src/serviceWorker.ts"]
