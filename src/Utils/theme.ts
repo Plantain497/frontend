@@ -3,7 +3,7 @@ import { ThemeConfig } from '@shopify/polaris/types/utilities/theme';
 const theme: ThemeConfig = {
   colors: {
     topBar: {
-      background: '#454F5B'
+      background: '#FFC555'
     }
   },
   logo: {
