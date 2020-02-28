@@ -1,22 +1,23 @@
-import { AppProvider, Frame } from '@shopify/polaris';
-import enTranslations from '@shopify/polaris/locales/en.json';
 import React, { FunctionComponent, ReactElement } from 'react';
-import { NavBar } from './Components/NavBar';
-import { SideNav } from './Components/SideNav';
-import { theme } from './Utils';
-
-import { items } from './Utils';
 
 const App: FunctionComponent = (): ReactElement => {
   return (
-    <AppProvider i18n={enTranslations} theme={theme}>
-      <Frame
-        topBar={<NavBar username={'Sally'} initial={'SH'} detail={'Plantain'} />}
-        navigation={<SideNav items={items} />}
-      >
-        <h1>Content</h1>
-      </Frame>
-    </AppProvider>
+    <div className="h-screen bg-gray-500">
+      <div className="p-16">
+        <h1 className="text-xl text-white">Tailwind Setup</h1>
+        <div className="py-4">
+          <button className="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full">
+            Success
+          </button>
+          <button className="inline-flex px-2 ml-2 text-xs font-semibold leading-5 text-red-800 bg-red-100 rounded-full">
+            Error
+          </button>
+          <button className="inline-flex px-2 ml-2 text-xs font-semibold leading-5 text-yellow-800 bg-yellow-100 rounded-full">
+            Warning
+          </button>
+        </div>
+      </div>
+    </div>
   );
 };
 

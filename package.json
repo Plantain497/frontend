@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@shopify/polaris": "^4.13.1",
     "@syncfusion/ej2": "^17.4.50",
     "@syncfusion/ej2-base": "^17.4.47",
     "@syncfusion/ej2-data": "17.4.47",
@@ -13,33 +12,74 @@
     "@syncfusion/ej2-react-calendars": "17.4.50",
     "@syncfusion/ej2-react-schedule": "^17.4.50",
     "@syncfusion/ej2-schedule": "17.4.50",
-    "@types/codemirror": "0.0.85",
-    "@types/jest": "25.1.3",
-    "@types/marked": "0.7.2",
-    "@types/moment-timezone": "0.5.12",
-    "@types/node": "13.7.4",
-    "@types/react": "16.9.22",
-    "@types/react-dom": "16.9.5",
+    "@tailwindcss/ui": "^0.1.2",
     "codemirror": "5.52.0",
     "fuse.js": "3.4.6",
+    "inter-ui": "^3.12.1",
     "marked": "0.8.0",
     "moment-timezone": "0.5.28",
     "node-sass": "^4.13.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.4.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-transition-group": "^4.3.0"
+  },
+  "devDependencies": {
+    "@types/codemirror": "0.0.85",
+    "@types/jest": "^25.1.3",
+    "@types/marked": "0.7.2",
+    "@types/moment-timezone": "0.5.12",
+    "@types/node": "^13.7.6",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "glob-all": "^3.1.0",
+    "prettier": "^1.19.1",
+    "purgecss-webpack-plugin": "^2.1.0",
+    "react-app-rewired": "^2.1.5",
+    "react-scripts": "^3.4.0",
     "set-value": "^3.0.1",
-    "tributejs": "4.1.3",
-    "tslib": "1.11.0",
-    "typescript": "3.8.2"
+    "tailwindcss": "^1.2.0",
+    "tslint": "^6.0.0",
+    "tslint-microsoft-contrib": "^6.2.0",
+    "tslint-react": "^4.2.0",
+    "typescript": "^3.8.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "tailwind": "tailwind build ./src/index.tailwind.css -c ./tailwind.config.js -o ./src/index.css",
+    "start": "yarn tailwind && react-scripts start",
+    "build": "yarn tailwind && react-app-rewired build",
     "lint": "tslint --project tsconfig.json --config tslint.json -t stylish -r node_modules/tslint-microsoft-contrib",
-    "lint:fix": "tslint --project tsconfig.json --config tslint.json --fix -t stylish -r node_modules/tslint-microsoft-contrib"
+    "lint:fix": "tslint --project tsconfig.json --config tslint.json --fix -t stylish -r node_modules/tslint-microsoft-contrib",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "lint-staged": {
+    "linters": {
+      "*.{ts,tsx}": [
+        "node ./scripts/lint-staged/prettier",
+        "node ./scripts/lint-staged/tslint",
+        "git add"
+      ],
+      "*.{js,jsx,json,scss,css,html,htm,md,yml}": [
+        "node ./scripts/lint-staged/prettier",
+        "node ./scripts/lint-staged/auto-convert-change-files",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "common/scripts/*.js",
+      "packages/tslint-rules/tslint.json",
+      "**/CHANGELOG.*",
+      "**/*.api.md",
+      "**/_*.scss"
+    ]
+  },
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*",
+      "scripts",
+      "packages/fluentui/*"
+    ]
   },
   "browserslist": {
     "production": [
@@ -52,11 +92,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@shopify/react-testing": "^1.8.8",
-    "tslint": "^6.0.0",
-    "tslint-microsoft-contrib": "^6.2.0",
-    "tslint-react": "^4.2.0"
   }
 }

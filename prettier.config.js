@@ -1,7 +1,10 @@
-// https://prettier.io/docs/en/configuration.html
 module.exports = {
-  printWidth: 120,
-  tabWidth: 2,
+  jsxBracketSameLine: false,
+  printWidth: 80,
+  parser: 'typescript',
+  semi: true,
   singleQuote: true,
-  jsxSingleQuote: true
+  quoteProps: 'as-needed',
+  tabWidth: 2,
+  trailingComma: 'es5',
 };

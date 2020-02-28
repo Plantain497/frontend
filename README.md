@@ -2,7 +2,7 @@
 
 ## Dependencies
 
-- [npm](https://www.npmjs.com/)
+- [yarn](https://classic.yarnpkg.com/en/docs/install#mac-stable)
 
 ## Getting started
 
@@ -10,20 +10,20 @@
 
 Install all the project dependencies.
 
-**With npm**
+**With yarn**
 
 ```bash
-npm install
+yarn install
 ```
 
 ### Development
 
-Run the local `create-react-app` development server with Polaris preconfigured.
+Run the local `create-react-app` development server with TailwindCSS preconfigured.
 
-**With npm**
+**With yarn**
 
 ```bash
-npm start
+yarn start
 ```
 
-Open **http://localhost:3000** in your browser and you should see the Polaris example application.
+Open **http://localhost:3000** in your browser and you should see the TailwindCSS example application.
