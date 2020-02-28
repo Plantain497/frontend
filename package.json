@@ -21,7 +21,8 @@
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-transition-group": "^4.3.0"
+    "react-transition-group": "^4.3.0",
+    "tslint-config-prettier": "^1.18.0"
   },
   "devDependencies": {
     "@types/codemirror": "0.0.85",
@@ -50,7 +51,8 @@
     "lint": "tslint --project tsconfig.json --config tslint.json -t stylish -r node_modules/tslint-microsoft-contrib",
     "lint:fix": "tslint --project tsconfig.json --config tslint.json --fix -t stylish -r node_modules/tslint-microsoft-contrib",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json"
   },
   "lint-staged": {
     "linters": {
@@ -71,14 +73,6 @@
       "**/CHANGELOG.*",
       "**/*.api.md",
       "**/_*.scss"
-    ]
-  },
-  "workspaces": {
-    "packages": [
-      "apps/*",
-      "packages/*",
-      "scripts",
-      "packages/fluentui/*"
     ]
   },
   "browserslist": {

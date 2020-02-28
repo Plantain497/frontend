@@ -1,5 +1,4 @@
 {
-  "extends": ["tslint-microsoft-contrib"],
   "defaultSeverity": "warning",
   "rules": {
     "no-default-export": true,
@@ -10,9 +9,17 @@
     "variable-name": false,
     "import-name": false,
     "no-import-side-effect": false,
-    "align": false
+    "align": false,
+    "max-func-body-length": false
   },
   "linterOptions": {
-    "exclude": ["src/serviceWorker.ts"]
-  }
+    "exclude": [
+      "src/serviceWorker.ts"
+    ]
+  },
+  "extends": [
+    "tslint-microsoft-contrib",
+    "tslint:latest",
+    "tslint-config-prettier"
+  ]
 }
