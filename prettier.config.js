@@ -4,7 +4,7 @@ module.exports = {
   parser: 'typescript',
   semi: true,
   singleQuote: true,
-  quoteProps: 'as-needed',
+  jsxSingleQuote: true,
   tabWidth: 2,
   trailingComma: 'es5',
 };
