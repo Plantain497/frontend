@@ -56,7 +56,11 @@ const NavBar: FunctionComponent = (): ReactElement => {
                 <button className='p-1 text-gray-400 transition duration-150 ease-in-out border-2 border-transparent rounded-full hover:text-white focus:outline-none focus:text-white focus:bg-gray-700'>
                   <NotificationBell />
                 </button>
-                <ImageDropdown imgSrc={AvatarSrc} classes={'relative ml-3'} />
+                <ImageDropdown
+                  imgSrc={AvatarSrc}
+                  imgClasses={'w-8 h-8 rounded-full'}
+                  classes={'relative ml-3'}
+                />
               </div>
             </div>
             <div className='flex -mr-2 md:hidden'>
