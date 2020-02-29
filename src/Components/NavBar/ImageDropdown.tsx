@@ -1,6 +1,6 @@
 import clsx from 'clsx';
+import { AnimatePresence, motion } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
-// import { Transition } from 'react-transition-group';
 
 interface IImageDropdown {
   imgClasses?: string;
@@ -47,43 +47,40 @@ const ImageDropdown = ({ imgClasses, classes, imgSrc }: IImageDropdown) => {
       >
         <img className={imgClasses} src={imgSrc} alt='Profile' />
       </button>
-      <div
-        // x-transition:enter="transition ease-out duration-100"
-        // x-transition:enter-start="transform opacity-0 scale-95"
-        // x-transition:enter-end="transform opacity-100 scale-100"
-        // x-transition:leave="transition ease-in duration-75"
-        // x-transition:leave-start="transform opacity-100 scale-100"
-        // x-transition:leave-end="transform opacity-0 scale-95"
-
-        className={clsx(
-          'absolute right-0 w-48 mt-2 -mr-1 origin-top-right rounded-md shadow-lg',
-          {
-            hidden: !isOpen,
-            block: isOpen,
-          }
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className={clsx(
+              'absolute right-0 w-48 mt-2 -mr-1 origin-top-right rounded-md shadow-lg'
+            )}
+          >
+            <div className='py-1 bg-white rounded-md shadow-xs'>
+              <a
+                href='/'
+                className='block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100'
+              >
+                Your Profile
+              </a>
+              <a
+                href='/'
+                className='block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100'
+              >
+                Settings
+              </a>
+              <a
+                href='/'
+                className='block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100'
+              >
+                Sign out
+              </a>
+            </div>
+          </motion.div>
         )}
-      >
-        <div className='py-1 bg-white rounded-md shadow-xs'>
-          <a
-            href='/'
-            className='block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100'
-          >
-            Your Profile
-          </a>
-          <a
-            href='/'
-            className='block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100'
-          >
-            Settings
-          </a>
-          <a
-            href='/'
-            className='block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100'
-          >
-            Sign out
-          </a>
-        </div>
-      </div>
+      </AnimatePresence>
     </div>
   );
 };

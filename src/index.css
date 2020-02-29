@@ -27850,6 +27850,11 @@ video {
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.duration-0 {
+  -webkit-transition-duration: 0ms;
+          transition-duration: 0ms;
+}
+
 .duration-75 {
   -webkit-transition-duration: 75ms;
           transition-duration: 75ms;
@@ -55148,6 +55153,11 @@ video {
   .sm\:ease-in-out {
     -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .sm\:duration-0 {
+    -webkit-transition-duration: 0ms;
+            transition-duration: 0ms;
   }
 
   .sm\:duration-75 {
@@ -82451,6 +82461,11 @@ video {
             transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  .md\:duration-0 {
+    -webkit-transition-duration: 0ms;
+            transition-duration: 0ms;
+  }
+
   .md\:duration-75 {
     -webkit-transition-duration: 75ms;
             transition-duration: 75ms;
@@ -109752,6 +109767,11 @@ video {
             transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  .lg\:duration-0 {
+    -webkit-transition-duration: 0ms;
+            transition-duration: 0ms;
+  }
+
   .lg\:duration-75 {
     -webkit-transition-duration: 75ms;
             transition-duration: 75ms;
@@ -137051,6 +137071,11 @@ video {
   .xl\:ease-in-out {
     -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .xl\:duration-0 {
+    -webkit-transition-duration: 0ms;
+            transition-duration: 0ms;
   }
 
   .xl\:duration-75 {

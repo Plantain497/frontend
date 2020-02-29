@@ -3,7 +3,11 @@ import AvatarSrc from './Avatar.jpg';
 import { Hamburger } from './Hamburger';
 import { ImageDropdown } from './ImageDropdown';
 import { ReactComponent as Logo } from './Logo.svg';
-import { LargeNavButton, SmallNavButton } from './NavButton';
+import {
+  LargeNavButton,
+  SmallNavButton,
+  SmallSettingsButton,
+} from './NavButton';
 import { ReactComponent as NotificationBell } from './NotificationBell.svg';
 
 const NavBar: FunctionComponent = (): ReactElement => {
@@ -132,24 +136,9 @@ const NavBar: FunctionComponent = (): ReactElement => {
               </div>
             </div>
             <div className='px-2 mt-3 sm:px-3'>
-              <a
-                href='/'
-                className='block px-3 py-2 text-base font-medium text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
-              >
-                Your Profile
-              </a>
-              <a
-                href='/'
-                className='block px-3 py-2 mt-1 text-base font-medium text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
-              >
-                Settings
-              </a>
-              <a
-                href='/'
-                className='block px-3 py-2 mt-1 text-base font-medium text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
-              >
-                Sign out
-              </a>
+              <SmallSettingsButton name={'Your Profile'} />
+              <SmallSettingsButton name={'Settings'} classes='mt-1' />
+              <SmallSettingsButton name={'Sign out'} classes='mt-1' />
             </div>
           </div>
         </div>

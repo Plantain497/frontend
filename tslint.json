@@ -13,7 +13,9 @@
     "max-func-body-length": false,
     "react-this-binding-issue": false,
     "react-a11y-anchors": false,
-    "strict-boolean-expressions": false
+    "strict-boolean-expressions": false,
+    "no-void-expression": false,
+    "use-simple-attributes": false
   },
   "linterOptions": {
     "exclude": [

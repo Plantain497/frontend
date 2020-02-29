@@ -8,6 +8,12 @@ interface INavButton {
   setSelectedItem(itemName: string): void;
 }
 
+interface ISettingsButton {
+  classes?: string;
+  name: string;
+  href?: string;
+}
+
 const LargeNavButton = ({
   itemName,
   currentSelectedItem,
@@ -57,4 +63,22 @@ const SmallNavButton = ({
   );
 };
 
-export { LargeNavButton, SmallNavButton };
+const SmallSettingsButton = ({
+  classes,
+  name,
+  href,
+}: ISettingsButton): ReactElement => {
+  return (
+    <a
+      className={clsx(
+        classes,
+        'block px-3 py-2 mt-1 text-base font-medium text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
+      )}
+      href={href}
+    >
+      {name}
+    </a>
+  );
+};
+
+export { LargeNavButton, SmallNavButton, SmallSettingsButton };
