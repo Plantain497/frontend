@@ -1,5 +1,7 @@
 import React, { FunctionComponent, ReactElement, useState } from 'react';
+import { ReactComponent as Logo } from './Logo.svg';
 import { NavButton } from './NavButton';
+import { ReactComponent as NotificationBell } from './NotificationBell.svg';
 // import { Transition } from 'react-transition-group';
 
 const NavBar: FunctionComponent = (): ReactElement => {
@@ -13,11 +15,7 @@ const NavBar: FunctionComponent = (): ReactElement => {
           <div className='flex items-center justify-between h-16 px-4 sm:px-0'>
             <div className='flex items-center'>
               <div className='flex-shrink-0'>
-                <img
-                  className='w-8 h-8'
-                  src='https://tailwindui.com/img/logos/workflow-mark-on-dark.svg'
-                  alt='Logo'
-                />
+                <Logo className='w-8 h-8' />
               </div>
               <div className='hidden md:block'>
                 <div className='flex items-baseline ml-10'>
@@ -56,19 +54,7 @@ const NavBar: FunctionComponent = (): ReactElement => {
             <div className='hidden md:block'>
               <div className='flex items-center ml-4 md:ml-6'>
                 <button className='p-1 text-gray-400 transition duration-150 ease-in-out border-2 border-transparent rounded-full hover:text-white focus:outline-none focus:text-white focus:bg-gray-700'>
-                  <svg
-                    className='w-6 h-6'
-                    stroke='currentColor'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                  >
-                    <path
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      stroke-width='2'
-                      d='M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9'
-                    ></path>
-                  </svg>
+                  <NotificationBell />
                 </button>
                 <div className='relative ml-3' x-data='{ open: false }'>
                   <div>
