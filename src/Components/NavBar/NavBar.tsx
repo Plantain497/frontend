@@ -68,6 +68,11 @@ const NavBar: FunctionComponent = (): ReactElement => {
                   imgSrc={AvatarSrc}
                   imgClasses={'w-8 h-8 rounded-full'}
                   classes={'relative ml-3'}
+                  dropdownElements={[
+                    { label: 'Your Profile' },
+                    { label: 'Settings' },
+                    { label: 'Sign Out' },
+                  ]}
                 />
               </div>
             </div>

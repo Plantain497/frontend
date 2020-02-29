@@ -2,17 +2,24 @@ import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
 
+interface IDropdownElement {
+  label: string;
+  href?: string;
+}
+
 interface IImageDropdown {
   imgClasses?: string;
   classes?: string;
   imgSrc?: string;
-  // dropdownElements?: {
-  //   label: string;
-  //   href: string;
-  // }[];
+  dropdownElements?: IDropdownElement[];
 }
 
-const ImageDropdown = ({ imgClasses, classes, imgSrc }: IImageDropdown) => {
+const ImageDropdown = ({
+  imgClasses,
+  classes,
+  imgSrc,
+  dropdownElements,
+}: IImageDropdown) => {
   const node: any = useRef(); // To handle outside clicks to close the dropdown!
   const [isOpen, setOpen] = useState<boolean>(false);
 
@@ -59,24 +66,19 @@ const ImageDropdown = ({ imgClasses, classes, imgSrc }: IImageDropdown) => {
             )}
           >
             <div className='py-1 bg-white rounded-md shadow-xs'>
-              <a
-                href='/'
-                className='block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100'
-              >
-                Your Profile
-              </a>
-              <a
-                href='/'
-                className='block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100'
-              >
-                Settings
-              </a>
-              <a
-                href='/'
-                className='block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100'
-              >
-                Sign out
-              </a>
+              {dropdownElements?.map(
+                (element: IDropdownElement, index: number) => {
+                  return (
+                    <a
+                      href={element.href}
+                      key={index}
+                      className='block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100'
+                    >
+                      {element.label}
+                    </a>
+                  );
+                }
+              )}
             </div>
           </motion.div>
         )}
