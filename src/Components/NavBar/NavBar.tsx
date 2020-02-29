@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactElement, useState } from 'react';
 import AvatarSrc from './Avatar.jpg';
-import { ReactComponent as HamburgerMenu } from './HamburgerMenu.svg';
+import { Hamburger } from './Hamburger';
 import { ImageDropdown } from './ImageDropdown';
 import { ReactComponent as Logo } from './Logo.svg';
 import { LargeNavButton, SmallNavButton } from './NavButton';
@@ -68,10 +68,11 @@ const NavBar: FunctionComponent = (): ReactElement => {
               </div>
             </div>
             <div className='flex -mr-2 md:hidden'>
-              <button className='inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white'>
-                <HamburgerMenu
-                  onClick={() => setHamburgerOpen(!hamburgerOpen)}
-                />
+              <button
+                className='inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white'
+                onClick={() => setHamburgerOpen(!hamburgerOpen)}
+              >
+                <Hamburger isOpen={hamburgerOpen} />
               </button>
             </div>
           </div>
