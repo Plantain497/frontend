@@ -32,6 +32,7 @@ const ImageDropdown = ({
   };
 
   useEffect(() => {
+    // Specific "outside click" detection
     if (isOpen) {
       document.addEventListener('mousedown', handleClickOutside);
     } else {
