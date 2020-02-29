@@ -1,6 +1,11 @@
-import React, { FunctionComponent, ReactElement } from 'react';
+import React, { FunctionComponent, ReactElement, useState } from 'react';
+import { NavButton } from './NavButton';
+// import { Transition } from 'react-transition-group';
 
 const NavBar: FunctionComponent = (): ReactElement => {
+  const [selected, setSelected] = useState<string>('Dashboard');
+  const [isOpen, setOpen] = useState<boolean>(false);
+
   return (
     <nav className='bg-gray-800'>
       <div className='mx-auto max-w-7xl sm:px-6 lg:px-8'>
@@ -16,36 +21,35 @@ const NavBar: FunctionComponent = (): ReactElement => {
               </div>
               <div className='hidden md:block'>
                 <div className='flex items-baseline ml-10'>
-                  <a
-                    href='#'
-                    className='px-3 py-2 text-sm font-medium text-white transition duration-150 ease-in-out bg-gray-900 rounded-md focus:outline-none focus:text-white focus:bg-gray-700'
-                  >
-                    Dashboard
-                  </a>
-                  <a
-                    href='#'
-                    className='px-3 py-2 ml-4 text-sm font-medium text-gray-300 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
-                  >
-                    Team
-                  </a>
-                  <a
-                    href='#'
-                    className='px-3 py-2 ml-4 text-sm font-medium text-gray-300 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
-                  >
-                    Projects
-                  </a>
-                  <a
-                    href='#'
-                    className='px-3 py-2 ml-4 text-sm font-medium text-gray-300 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
-                  >
-                    Calendar
-                  </a>
-                  <a
-                    href='#'
-                    className='px-3 py-2 ml-4 text-sm font-medium text-gray-300 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
-                  >
-                    Reports
-                  </a>
+                  <NavButton
+                    itemName={'Dashboard'}
+                    currentSelectedItem={selected}
+                    setSelectedItem={setSelected}
+                  />
+                  <NavButton
+                    classes='ml-4'
+                    itemName={'Team'}
+                    currentSelectedItem={selected}
+                    setSelectedItem={setSelected}
+                  />
+                  <NavButton
+                    classes='ml-4'
+                    itemName={'Projects'}
+                    currentSelectedItem={selected}
+                    setSelectedItem={setSelected}
+                  />
+                  <NavButton
+                    classes='ml-4'
+                    itemName={'Calendar'}
+                    currentSelectedItem={selected}
+                    setSelectedItem={setSelected}
+                  />
+                  <NavButton
+                    classes='ml-4'
+                    itemName={'Reports'}
+                    currentSelectedItem={selected}
+                    setSelectedItem={setSelected}
+                  />
                 </div>
               </div>
             </div>
@@ -72,7 +76,7 @@ const NavBar: FunctionComponent = (): ReactElement => {
                       <img
                         className='w-8 h-8 rounded-full'
                         src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80'
-                        alt=''
+                        alt='Profile'
                       />
                     </button>
                   </div>
@@ -85,19 +89,19 @@ const NavBar: FunctionComponent = (): ReactElement => {
                   >
                     <div className='py-1 bg-white rounded-md shadow-xs'>
                       <a
-                        href='#'
+                        href='/'
                         className='block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100'
                       >
                         Your Profile
                       </a>
                       <a
-                        href='#'
+                        href='/'
                         className='block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100'
                       >
                         Settings
                       </a>
                       <a
-                        href='#'
+                        href='/'
                         className='block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100'
                       >
                         Sign out
@@ -135,34 +139,34 @@ const NavBar: FunctionComponent = (): ReactElement => {
           </div>
         </div>
       </div>
-      <div className='hidden border-b border-gray-700 md:hidden'>
+      {/* <div className='hidden border-b border-gray-700 md:hidden'>
         <div className='px-2 py-3 sm:px-3'>
           <a
-            href='#'
+            href='/'
             className='block px-3 py-2 text-base font-medium text-white transition duration-150 ease-in-out bg-gray-900 rounded-md focus:outline-none focus:text-white focus:bg-gray-700'
           >
             Dashboard
           </a>
           <a
-            href='#'
+            href='/'
             className='block px-3 py-2 mt-1 text-base font-medium text-gray-300 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
           >
             Team
           </a>
           <a
-            href='#'
+            href='/'
             className='block px-3 py-2 mt-1 text-base font-medium text-gray-300 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
           >
             Projects
           </a>
           <a
-            href='#'
+            href='/'
             className='block px-3 py-2 mt-1 text-base font-medium text-gray-300 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
           >
             Calendar
           </a>
           <a
-            href='#'
+            href='/'
             className='block px-3 py-2 mt-1 text-base font-medium text-gray-300 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
           >
             Reports
@@ -188,26 +192,26 @@ const NavBar: FunctionComponent = (): ReactElement => {
           </div>
           <div className='px-2 mt-3 sm:px-3'>
             <a
-              href='#'
+              href='/'
               className='block px-3 py-2 text-base font-medium text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
             >
               Your Profile
             </a>
             <a
-              href='#'
+              href='/'
               className='block px-3 py-2 mt-1 text-base font-medium text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
             >
               Settings
             </a>
             <a
-              href='#'
+              href='/'
               className='block px-3 py-2 mt-1 text-base font-medium text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
             >
               Sign out
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
     </nav>
   );
 };
