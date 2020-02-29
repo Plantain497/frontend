@@ -6,6 +6,10 @@ interface IImageDropdown {
   imgClasses?: string;
   classes?: string;
   imgSrc?: string;
+  // dropdownElements?: {
+  //   label: string;
+  //   href: string;
+  // }[];
 }
 
 const ImageDropdown = ({ imgClasses, classes, imgSrc }: IImageDropdown) => {
@@ -33,6 +37,7 @@ const ImageDropdown = ({ imgClasses, classes, imgSrc }: IImageDropdown) => {
   }, [isOpen]);
 
   return (
+    // tslint:disable-next-line: no-unsafe-any
     <div ref={node} className={classes}>
       <button
         className='flex items-center max-w-xs text-sm transition duration-150 ease-in-out rounded-full focus:outline-none'
@@ -43,7 +48,12 @@ const ImageDropdown = ({ imgClasses, classes, imgSrc }: IImageDropdown) => {
         <img className={imgClasses} src={imgSrc} alt='Profile' />
       </button>
       <div
-        // x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95"
+        // x-transition:enter="transition ease-out duration-100"
+        // x-transition:enter-start="transform opacity-0 scale-95"
+        // x-transition:enter-end="transform opacity-100 scale-100"
+        // x-transition:leave="transition ease-in duration-75"
+        // x-transition:leave-start="transform opacity-100 scale-100"
+        // x-transition:leave-end="transform opacity-0 scale-95"
 
         className={clsx(
           'absolute right-0 w-48 mt-2 -mr-1 origin-top-right rounded-md shadow-lg',

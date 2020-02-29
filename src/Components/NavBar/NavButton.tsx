@@ -8,7 +8,7 @@ interface INavButton {
   setSelectedItem(itemName: string): void;
 }
 
-const NavButton = ({
+const LargeNavButton = ({
   itemName,
   currentSelectedItem,
   setSelectedItem,
@@ -32,4 +32,29 @@ const NavButton = ({
   );
 };
 
-export { NavButton };
+const SmallNavButton = ({
+  itemName,
+  currentSelectedItem,
+  setSelectedItem,
+  classes,
+}: INavButton): ReactElement => {
+  return (
+    <span
+      className={clsx(classes, {
+        'block px-3 py-2 text-base font-medium transition duration-150 ease-in-out rounded-md focus:text-white focus:bg-gray-700': true,
+        'text-white bg-gray-900 focus:outline-none':
+          currentSelectedItem === itemName,
+        'text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none':
+          currentSelectedItem !== itemName,
+      })}
+      onClick={() => {
+        setSelectedItem(itemName);
+      }}
+      role='button'
+    >
+      {itemName}
+    </span>
+  );
+};
+
+export { LargeNavButton, SmallNavButton };
