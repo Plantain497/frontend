@@ -1,12 +1,12 @@
 import React, { FunctionComponent, ReactElement, useState } from 'react';
+import AvatarSrc from './Avatar.jpg';
+import { ImageDropdown } from './ImageDropdown';
 import { ReactComponent as Logo } from './Logo.svg';
 import { NavButton } from './NavButton';
 import { ReactComponent as NotificationBell } from './NotificationBell.svg';
-// import { Transition } from 'react-transition-group';
 
 const NavBar: FunctionComponent = (): ReactElement => {
   const [selected, setSelected] = useState<string>('Dashboard');
-  const [isOpen, setOpen] = useState<boolean>(false);
 
   return (
     <nav className='bg-gray-800'>
@@ -56,45 +56,7 @@ const NavBar: FunctionComponent = (): ReactElement => {
                 <button className='p-1 text-gray-400 transition duration-150 ease-in-out border-2 border-transparent rounded-full hover:text-white focus:outline-none focus:text-white focus:bg-gray-700'>
                   <NotificationBell />
                 </button>
-                <div className='relative ml-3' x-data='{ open: false }'>
-                  <div>
-                    <button className='flex items-center max-w-xs text-sm transition duration-150 ease-in-out rounded-full focus:outline-none focus:shadow-solid-white'>
-                      <img
-                        className='w-8 h-8 rounded-full'
-                        src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80'
-                        alt='Profile'
-                      />
-                    </button>
-                  </div>
-                  <div
-                    x-show='open'
-                    style={{ display: 'none' }}
-                    // x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95"
-
-                    className='absolute right-0 w-48 mt-2 -mr-1 origin-top-right rounded-md shadow-lg'
-                  >
-                    <div className='py-1 bg-white rounded-md shadow-xs'>
-                      <a
-                        href='/'
-                        className='block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100'
-                      >
-                        Your Profile
-                      </a>
-                      <a
-                        href='/'
-                        className='block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100'
-                      >
-                        Settings
-                      </a>
-                      <a
-                        href='/'
-                        className='block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100'
-                      >
-                        Sign out
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <ImageDropdown imgSrc={AvatarSrc} classes={'relative ml-3'} />
               </div>
             </div>
             <div className='flex -mr-2 md:hidden'>

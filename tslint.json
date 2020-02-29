@@ -11,7 +11,8 @@
     "no-import-side-effect": false,
     "align": false,
     "max-func-body-length": false,
-    "react-this-binding-issue": false
+    "react-this-binding-issue": false,
+    "react-a11y-anchors": false
   },
   "linterOptions": {
     "exclude": [
