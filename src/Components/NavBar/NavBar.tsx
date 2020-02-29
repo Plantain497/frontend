@@ -1,5 +1,5 @@
 import React, { FunctionComponent, ReactElement, useState } from 'react';
-import AvatarSrc from './Avatar.jpg';
+import Avatar from './Avatar.jpg';
 import { Hamburger } from './Hamburger';
 import { ImageDropdown } from './ImageDropdown';
 import { ReactComponent as Logo } from './Logo.svg';
@@ -65,7 +65,7 @@ const NavBar: FunctionComponent = (): ReactElement => {
                   <NotificationBell />
                 </button>
                 <ImageDropdown
-                  imgSrc={AvatarSrc}
+                  imgSrc={Avatar}
                   imgClasses={'w-8 h-8 rounded-full'}
                   classes={'relative ml-3'}
                   dropdownElements={[
@@ -127,7 +127,7 @@ const NavBar: FunctionComponent = (): ReactElement => {
               <div className='flex-shrink-0'>
                 <img
                   className='w-10 h-10 rounded-full'
-                  src={AvatarSrc}
+                  src={Avatar}
                   alt='Profile'
                 />
               </div>
