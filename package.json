@@ -13,7 +13,6 @@
     "@syncfusion/ej2-react-schedule": "^17.4.50",
     "@syncfusion/ej2-schedule": "17.4.50",
     "@tailwindcss/ui": "^0.1.2",
-    "@types/classnames": "^2.2.9",
     "clsx": "^1.1.0",
     "codemirror": "5.52.0",
     "framer-motion": "^1.8.4",
