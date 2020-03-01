@@ -7,7 +7,7 @@ interface IHamburger {
 const Hamburger = ({ isOpen }: IHamburger) => {
   return (
     <svg
-      className='h-6 w-6'
+      className='w-6 h-6'
       stroke='currentColor'
       fill='none'
       viewBox='0 0 24 24'
