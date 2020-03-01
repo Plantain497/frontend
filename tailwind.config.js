@@ -7,15 +7,7 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
-      transitionDuration: {
-        '0': '0ms',
-        '75': '75ms',
-      },
     },
   },
-  plugins: [
-    require('@tailwindcss/ui')({
-      layout: 'sidebar',
-    }),
-  ],
+  plugins: [require('@tailwindcss/ui')],
 };
