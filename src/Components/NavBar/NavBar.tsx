@@ -1,4 +1,5 @@
 import React, { FunctionComponent, ReactElement, useState } from 'react';
+import { AppContainer } from '../Containers';
 import Avatar from './Avatar.jpg';
 import { Hamburger } from './Hamburger';
 import { ImageDropdown } from './ImageDropdown';
@@ -18,7 +19,7 @@ const NavBar: FunctionComponent = (): ReactElement => {
     <nav className='bg-gray-800'>
       {/* Proper Menu */}
 
-      <div className='mx-auto max-w-7xl sm:px-6 lg:px-8'>
+      <AppContainer>
         <div className='border-b border-gray-700'>
           <div className='flex items-center justify-between h-16 px-4 sm:px-0'>
             <div className='flex items-center'>
@@ -86,8 +87,7 @@ const NavBar: FunctionComponent = (): ReactElement => {
             </div>
           </div>
         </div>
-      </div>
-
+      </AppContainer>
       {/* Small Menu */}
       {hamburgerOpen && (
         <div className={'border-b border-gray-700 md:hidden'}>

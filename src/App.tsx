@@ -1,11 +1,12 @@
 import React, { FunctionComponent, ReactElement } from 'react';
+import { AppContainer } from './Components/Containers';
 import { NavBar } from './Components/NavBar';
 
 const App: FunctionComponent = (): ReactElement => {
   return (
     <div className='h-screen font-sans antialiased text-gray-900 bg-gray-100'>
       <NavBar />
-      <div className='py-8 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8'>
+      <AppContainer classes='py-8'>
         <h1 className='text-xl'>Tailwind Setup</h1>
         <div className='py-4'>
           <button className='inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full'>
@@ -18,7 +19,7 @@ const App: FunctionComponent = (): ReactElement => {
             Warning
           </button>
         </div>
-      </div>
+      </AppContainer>
     </div>
   );
 };
