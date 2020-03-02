@@ -16,7 +16,8 @@
     "strict-boolean-expressions": false,
     "no-void-expression": false,
     "use-simple-attributes": false,
-    "no-unsafe-any": false
+    "no-unsafe-any": false,
+    "no-console": false
   },
   "linterOptions": {
     "exclude": [
