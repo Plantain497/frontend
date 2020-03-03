@@ -10,7 +10,14 @@ import { useNavigate } from 'react-router-dom';
 import { useGoogleLogin, useGoogleLogout } from './GoogleAuth';
 
 type AuthContextValue = {
-  userObject: any;
+  userObject?: {
+    googleId: string;
+    imageUrl: string;
+    email: string;
+    name: string;
+    givenName: string;
+    familyName: string;
+  };
   token: string;
   loaded: boolean;
   signIn(): void;
@@ -43,10 +50,14 @@ export const AuthProvider: FunctionComponent = props => {
     onFailure: console.error,
   };
 
+  const setProfileObj = (e: any) => {
+    setUserObject(e.profileObj);
+  };
+
   // @ts-ignore
   const { signIn, loaded } = useGoogleLogin({
     ...googleLoginCommon,
-    onSuccess: setUserObject,
+    onSuccess: setProfileObj,
   });
 
   // @ts-ignore

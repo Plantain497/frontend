@@ -11,7 +11,7 @@ const Landing: FunctionComponent = () => {
   // TODO: Uncomment this
   useEffect(() => {
     if (auth.userObject) {
-      console.log(auth.userObject.profileObj);
+      console.log(auth.userObject);
     }
     // if (auth.token) {
     //   navigate('/app/dashboard');
@@ -26,4 +26,3 @@ const Landing: FunctionComponent = () => {
 };
 
 export { Landing };
-
