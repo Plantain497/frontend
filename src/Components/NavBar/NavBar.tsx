@@ -6,7 +6,7 @@ import { ImageDropdown } from './ImageDropdown';
 import { ReactComponent as Logo } from './Logo.svg';
 import { ReactComponent as LogoFull } from './LogoFull.svg';
 import { LargeNavButton, SmallNavButton } from './NavButtons';
-import { ReactComponent as NotificationBell } from './NotificationBell.svg';
+import { Notifications } from './Notifications';
 
 const NavBar: FunctionComponent = (): ReactElement => {
   const [selected, setSelected] = useState<string>('Dashboard');
@@ -63,21 +63,20 @@ const NavBar: FunctionComponent = (): ReactElement => {
             </div>
           </div>
           <div className='absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0'>
-            <button className='p-1 text-gray-400 transition duration-150 ease-in-out border-2 border-transparent rounded-full hover:text-white focus:outline-none focus:text-white focus:bg-gray-700'>
-              <NotificationBell />
-            </button>
-            <div className='relative ml-3'>
-              <ImageDropdown
-                imgSrc={Avatar}
-                imgClasses={'w-8 h-8 rounded-full'}
-                classes={'relative ml-3'}
-                dropdownElements={[
-                  { label: 'Your Profile' },
-                  { label: 'Settings' },
-                  { label: 'Sign Out' },
-                ]}
-              />
-            </div>
+            <Notifications
+              classes={'relative ml-3'}
+              dropdownElements={[{ label: 'React Scheduler Overdue' }]}
+            />
+            <ImageDropdown
+              imgSrc={Avatar}
+              imgClasses={'w-8 h-8 rounded-full'}
+              classes={'relative ml-3'}
+              dropdownElements={[
+                { label: 'Your Profile' },
+                { label: 'Settings' },
+                { label: 'Sign Out' },
+              ]}
+            />
           </div>
         </div>
 
