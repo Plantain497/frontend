@@ -1,13 +1,15 @@
 import React, { FunctionComponent, useEffect } from 'react';
 // @ts-ignore
 import { useNavigate } from 'react-router-dom';
-import { GoogleSignInButton } from '../GoogleSignInButton';
+import { NavBar } from '../NavBar';
+// import { GoogleSignInButton } from '../GoogleSignInButton';
 import { useAuth } from '../utils/Auth';
 
 const Landing: FunctionComponent = () => {
   const navigate = useNavigate();
   const auth = useAuth();
 
+  // TODO: Uncomment this
   useEffect(() => {
     console.log(auth);
     // if (auth.token) {
@@ -15,7 +17,7 @@ const Landing: FunctionComponent = () => {
     // }
   }, [auth]);
 
-  return <GoogleSignInButton />;
+  return <NavBar />;
 };
 
 export { Landing };

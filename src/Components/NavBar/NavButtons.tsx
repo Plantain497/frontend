@@ -23,10 +23,11 @@ const LargeNavButton = ({
   return (
     <span
       className={clsx(classes, {
-        'px-3 py-2 text-sm font-medium rounded-md transition duration-150 ease-in-out focus:outline-none focus:text-white focus:bg-gray-700': true,
-        'text-white bg-gray-900': currentSelectedItem === itemName,
-        'text-gray-300 hover:text-white hover:bg-gray-700':
-          currentSelectedItem !== itemName,
+        'px-3 py-2 text-sm font-medium leading-5 transition duration-150 ease-in-out rounded-md focus:outline-none': true,
+        'text-white bg-gray-900 focus:bg-gray-700 hover:bg-gray-700':
+          itemName === currentSelectedItem,
+        'text-gray-300 hover:text-white focus:text-white':
+          itemName !== currentSelectedItem,
       })}
       onClick={() => {
         setSelectedItem(itemName);
@@ -63,22 +64,4 @@ const SmallNavButton = ({
   );
 };
 
-const SmallSettingsButton = ({
-  classes,
-  name,
-  href,
-}: ISettingsButton): ReactElement => {
-  return (
-    <a
-      className={clsx(
-        classes,
-        'block px-3 py-2 mt-1 text-base font-medium text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700'
-      )}
-      href={href}
-    >
-      {name}
-    </a>
-  );
-};
-
-export { LargeNavButton, SmallNavButton, SmallSettingsButton };
+export { LargeNavButton, SmallNavButton };
