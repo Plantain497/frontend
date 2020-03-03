@@ -1,8 +1,8 @@
 import React, { FunctionComponent, ReactElement } from 'react';
 // @ts-ignore
 import { Route, Routes } from 'react-router-dom';
+import { AuthProvider } from './Components/Auth';
 import { Landing, PlantainApp } from './Components/Pages';
-import { AuthProvider } from './Components/utils/';
 
 const App: FunctionComponent = (): ReactElement => {
   return (

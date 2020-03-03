@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuth } from '../utils/Auth';
+import { useAuth } from '../Auth/Auth';
 
 const GoogleSignInButton = () => {
   const { signIn } = useAuth();

@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import { useGoogleLogin, useGoogleLogout } from './GoogleAuth';
 
 type AuthContextValue = {
+  userObject: any;
   token: string;
   loaded: boolean;
   signIn(): void;
@@ -63,13 +64,14 @@ export const AuthProvider: FunctionComponent = props => {
 
   const value = useMemo(
     () => ({
+      userObject,
       token,
       signIn,
       signOut,
       loaded,
     }),
     // eslint-disable-next-line
-    [token, loaded, signIn]
+    [userObject, token, loaded, signIn]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

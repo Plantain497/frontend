@@ -1,8 +1,8 @@
 import React, { FunctionComponent, useEffect } from 'react';
 // @ts-ignore
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../Auth/Auth';
 import { GoogleSignInButton } from '../GoogleSignInButton';
-import { useAuth } from '../utils/Auth';
 
 const Landing: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -10,13 +10,20 @@ const Landing: FunctionComponent = () => {
 
   // TODO: Uncomment this
   useEffect(() => {
-    console.log(auth);
+    if (auth.userObject) {
+      console.log(auth.userObject.profileObj);
+    }
     // if (auth.token) {
     //   navigate('/app/dashboard');
     // }
   }, [auth]);
 
-  return <GoogleSignInButton />;
+  return (
+    <div>
+      <GoogleSignInButton />
+    </div>
+  );
 };
 
 export { Landing };
+
