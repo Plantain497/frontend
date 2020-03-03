@@ -1,5 +1,5 @@
+import { gapi } from 'gapi-script';
 import { useEffect, useState } from 'react';
-import loadScript from './loadScript';
 
 const useGoogleLogin = ({
   onSuccess,
@@ -48,7 +48,7 @@ const useGoogleLogin = ({
       e.preventDefault(); // to prevent submit if used within form
     }
     if (loaded) {
-      const auth2 = window.gapi.auth2.getAuthInstance();
+      const auth2 = gapi.auth2.getAuthInstance();
       const options = {
         prompt,
       };
@@ -61,34 +61,32 @@ const useGoogleLogin = ({
   }
 
   useEffect(() => {
-    loadScript(document, 'script', 'google-login', jsSrc, () => {
-      const params = {
-        client_id: clientId,
-        cookie_policy: cookiePolicy,
-        login_hint: loginHint,
-        hosted_domain: hostedDomain,
-        fetch_basic_profile: fetchBasicProfile,
-        discoveryDocs,
-        ux_mode: uxMode,
-        redirect_uri: redirectUri,
-        scope,
-        access_type: accessType,
-      };
+    const params = {
+      client_id: clientId,
+      cookie_policy: cookiePolicy,
+      login_hint: loginHint,
+      hosted_domain: hostedDomain,
+      fetch_basic_profile: fetchBasicProfile,
+      discoveryDocs,
+      ux_mode: uxMode,
+      redirect_uri: redirectUri,
+      scope,
+      access_type: accessType,
+    };
 
-      if (responseType === 'code') {
-        params.access_type = 'offline';
+    if (responseType === 'code') {
+      params.access_type = 'offline';
+    }
+
+    gapi.load('auth2', () => {
+      setLoaded(true);
+      if (!gapi.auth2.getAuthInstance()) {
+        gapi.auth2.init(params).then(res => {
+          if (isSignedIn && res.isSignedIn.get()) {
+            handleSigninSuccess(res.currentUser.get());
+          }
+        }, onFailure);
       }
-
-      window.gapi.load('auth2', () => {
-        setLoaded(true);
-        if (!window.gapi.auth2.getAuthInstance()) {
-          window.gapi.auth2.init(params).then(res => {
-            if (isSignedIn && res.isSignedIn.get()) {
-              handleSigninSuccess(res.currentUser.get());
-            }
-          }, onFailure);
-        }
-      });
     });
     // eslint-disable-next-line
   }, []);
@@ -121,8 +119,8 @@ const useGoogleLogout = ({
   const [loaded, setLoaded] = useState(false);
 
   const signOut = () => {
-    if (window.gapi) {
-      const auth2 = window.gapi.auth2.getAuthInstance();
+    if (gapi) {
+      const auth2 = gapi.auth2.getAuthInstance();
       if (auth2 !== undefined) {
         auth2.signOut().then(auth2.disconnect().then(onLogoutSuccess));
       }
@@ -130,25 +128,23 @@ const useGoogleLogout = ({
   };
 
   useEffect(() => {
-    loadScript(document, 'script', 'google-login', jsSrc, () => {
-      const params = {
-        client_id: clientId,
-        cookie_policy: cookiePolicy,
-        login_hint: loginHint,
-        hosted_domain: hostedDomain,
-        fetch_basic_profile: fetchBasicProfile,
-        discoveryDocs,
-        ux_mode: uxMode,
-        redirect_uri: redirectUri,
-        scope,
-        access_type: accessType,
-      };
-      window.gapi.load('auth2', () => {
-        setLoaded(true);
-        if (!window.gapi.auth2.getAuthInstance()) {
-          window.gapi.auth2.init(params).then(() => {}, onFailure);
-        }
-      });
+    const params = {
+      client_id: clientId,
+      cookie_policy: cookiePolicy,
+      login_hint: loginHint,
+      hosted_domain: hostedDomain,
+      fetch_basic_profile: fetchBasicProfile,
+      discoveryDocs,
+      ux_mode: uxMode,
+      redirect_uri: redirectUri,
+      scope,
+      access_type: accessType,
+    };
+    gapi.load('auth2', () => {
+      setLoaded(true);
+      if (!gapi.auth2.getAuthInstance()) {
+        gapi.auth2.init(params).then(() => {}, onFailure);
+      }
     });
     // eslint-disable-next-line
   }, []);

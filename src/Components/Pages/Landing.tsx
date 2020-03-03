@@ -1,8 +1,7 @@
 import React, { FunctionComponent, useEffect } from 'react';
 // @ts-ignore
 import { useNavigate } from 'react-router-dom';
-import { NavBar } from '../NavBar';
-// import { GoogleSignInButton } from '../GoogleSignInButton';
+import { GoogleSignInButton } from '../GoogleSignInButton';
 import { useAuth } from '../utils/Auth';
 
 const Landing: FunctionComponent = () => {
@@ -17,7 +16,7 @@ const Landing: FunctionComponent = () => {
     // }
   }, [auth]);
 
-  return <NavBar />;
+  return <GoogleSignInButton />;
 };
 
 export { Landing };

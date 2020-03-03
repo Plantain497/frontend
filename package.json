@@ -17,6 +17,7 @@
     "codemirror": "5.52.0",
     "framer-motion": "^1.8.4",
     "fuse.js": "3.4.6",
+    "gapi-script": "^1.0.2",
     "history": "^5.0.0-beta.5",
     "inter-ui": "^3.12.1",
     "marked": "0.8.0",
