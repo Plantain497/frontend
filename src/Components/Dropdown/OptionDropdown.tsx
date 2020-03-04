@@ -91,24 +91,22 @@ const OptionDropdown = ({ title, classes, items }: IOptionDropdown) => {
                     return (
                       <>
                         <div className='border-t border-gray-100'></div>
-                        <a
-                          href='#'
+                        <button
                           className='block px-4 py-1 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900'
                           onClick={() => handleCurrentItemChange(item.name)}
                         >
                           {item.name}
-                        </a>
+                        </button>
                       </>
                     );
                   } else {
                     return (
-                      <a
-                        href='#'
+                      <button
                         className='block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900'
                         onClick={() => handleCurrentItemChange(item.name)}
                       >
                         {item.name}
-                      </a>
+                      </button>
                     );
                   }
                 })}
