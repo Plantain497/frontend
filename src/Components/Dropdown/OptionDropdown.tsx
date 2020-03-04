@@ -82,7 +82,6 @@ const OptionDropdown = ({ title, classes, items }: IOptionDropdown) => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
-            // x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95"
             className='absolute right-0 w-56 mt-2 origin-top-right rounded-md shadow-lg'
           >
             <div className='bg-white rounded-md shadow-xs'>
@@ -113,58 +112,6 @@ const OptionDropdown = ({ title, classes, items }: IOptionDropdown) => {
                     );
                   }
                 })}
-                {/* <a
-                  href='#'
-                  className='block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900'
-                  onClick={() => handleCurrentItemChange('Edit')}
-                >
-                  Edit
-                </a>
-                <a
-                  href='#'
-                  className='block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900'
-                >
-                  Duplicate
-                </a>
-              </div>
-              <div className='border-t border-gray-100'></div>
-              <div className='py-1'>
-                <a
-                  href='#'
-                  className='block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900'
-                >
-                  Archive
-                </a>
-                <a
-                  href='#'
-                  className='block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900'
-                >
-                  Move
-                </a>
-              </div>
-              <div className='border-t border-gray-100'></div>
-              <div className='py-1'>
-                <a
-                  href='#'
-                  className='block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900'
-                >
-                  Share
-                </a>
-                <a
-                  href='#'
-                  className='block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900'
-                >
-                  Add to favorites
-                </a>
-              </div>
-              <div className='border-t border-gray-100'></div>
-              <div className='py-1'>
-                <a
-                  href='#'
-                  className='block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900'
-                >
-                  Delete
-                </a>*/}
               </div>
             </div>
           </motion.div>
