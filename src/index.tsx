@@ -1,3 +1,4 @@
+import 'inter-ui';
 import React from 'react';
 import ReactDOM from 'react-dom';
 // @ts-ignore
