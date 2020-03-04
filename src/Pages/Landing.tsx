@@ -1,9 +1,9 @@
 import React, { FunctionComponent, useEffect } from 'react';
 // @ts-ignore
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../Auth/Auth';
-import { AppContainer } from '../Containers';
-import { LandingNavBar } from '../NavBar';
+import { useAuth } from '../Components/Auth';
+import { AppContainer } from '../Components/Containers';
+import { LandingNavBar } from '../Components/NavBar';
 
 const Landing: FunctionComponent = () => {
   const navigate = useNavigate();

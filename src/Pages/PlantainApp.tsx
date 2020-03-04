@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import { AppContainer } from '../Containers';
-import { NavBar } from '../NavBar';
+import { AppContainer } from '../Components/Containers';
+import { NavBar } from '../Components/NavBar';
 
 const PlantainApp: FunctionComponent = () => {
   return (
