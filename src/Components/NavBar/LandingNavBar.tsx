@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactElement, useState } from 'react';
+import { GoogleSignInButton } from '../Buttons';
 import { AppContainer } from '../Containers';
-import { GoogleSignInButton } from '../GoogleSignInButton';
 import { Hamburger } from './Hamburger';
 import { LargeNavButton, SmallNavButton } from './NavButtons';
 
