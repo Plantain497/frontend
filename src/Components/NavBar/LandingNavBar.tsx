@@ -1,8 +1,7 @@
 import React, { FunctionComponent, ReactElement, useState } from 'react';
-import { GoogleSignInButton } from '../Buttons';
+import { GoogleSignInButton, LargeNavButton, SmallNavButton } from '../Buttons';
 import { AppContainer } from '../Containers';
 import { Hamburger } from './Hamburger';
-import { LargeNavButton, SmallNavButton } from './NavButtons';
 
 const LandingNavBar: FunctionComponent = (): ReactElement => {
   const [selected, setSelected] = useState<string>('Product');

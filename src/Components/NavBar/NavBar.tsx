@@ -1,11 +1,11 @@
 import React, { FunctionComponent, ReactElement, useState } from 'react';
+import { LargeNavButton, SmallNavButton } from '../Buttons';
 import { AppContainer } from '../Containers';
 import Avatar from './Avatar.jpg';
 import { Hamburger } from './Hamburger';
 import { ImageDropdown } from './ImageDropdown';
 import { ReactComponent as Logo } from './Logo.svg';
 import { ReactComponent as LogoFull } from './LogoFull.svg';
-import { LargeNavButton, SmallNavButton } from './NavButtons';
 import { Notifications } from './Notifications';
 
 const NavBar: FunctionComponent = (): ReactElement => {
