@@ -4,7 +4,7 @@ import { NavBar } from '../NavBar';
 
 const PlantainApp: FunctionComponent = () => {
   return (
-    <div className='h-screen font-sans antialiased text-gray-900 bg-gray-100'>
+    <div className='h-screen text-gray-900 bg-gray-100'>
       <NavBar />
       <AppContainer classes='py-8'>
         <h1 className='text-xl'>Tailwind Setup</h1>
