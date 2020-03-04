@@ -1,15 +1,24 @@
-import React from 'react';
-import { useAuth } from '../Auth/Auth';
+import clsx from 'clsx';
+import React, { ReactNode } from 'react';
+import { useAuth } from '../Auth';
 
-const GoogleSignInButton = () => {
+interface IGoogleSignInButton {
+  classes?: string;
+  children?: ReactNode;
+}
+
+const GoogleSignInButton = ({ classes, children }: IGoogleSignInButton) => {
   const { signIn } = useAuth();
 
   return (
     <button
-      className='inline-flex px-4 py-2 text-xl font-semibold leading-5 text-blue-700 bg-blue-100 rounded-full'
+      className={clsx(
+        'flex items-center justify-center px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out  border border-transparent rounded focus:outline-none focus:shadow-outline',
+        classes
+      )}
       onClick={signIn}
     >
-      Sign in with Google
+      {children}
     </button>
   );
 };

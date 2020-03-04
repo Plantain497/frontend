@@ -1,5 +1,6 @@
 import React, { FunctionComponent, ReactElement, useState } from 'react';
 import { AppContainer } from '../Containers';
+import { GoogleSignInButton } from '../GoogleSignInButton';
 import { Hamburger } from './Hamburger';
 import { LargeNavButton, SmallNavButton } from './NavButtons';
 
@@ -63,26 +64,9 @@ const LandingNavBar: FunctionComponent = (): ReactElement => {
             </div>
           </div>
           <div className='absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0'>
-            {/* <button className='relative block w-full px-4 py-2 text-sm font-semibold leading-snug leading-6 text-white transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md shadow-md sm:h-auto sm:ml-4 sm:w-auto hover:bg-gray-800 focus:outline-none focus:bg-gray-800 hover:bg-gray-600'>
-              Sign Up
-            </button> */}
-            <button className='flex items-center justify-center px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-purple-500 border border-transparent rounded hover:text-gray-100 hover:bg-purple-700 focus:outline-none focus:shadow-outline'>
-              Sign Up
-            </button>
-            {/* <Notifications
-              classes={'relative ml-3'}
-              dropdownElements={[{ label: 'React Scheduler Overdue' }]}
-            />
-            <ImageDropdown
-              imgSrc={Avatar}
-              imgClasses={'w-8 h-8 rounded-full'}
-              classes={'relative ml-3'}
-              dropdownElements={[
-                { label: 'Your Profile' },
-                { label: 'Settings' },
-                { label: 'Sign Out' },
-              ]}
-            /> */}
+            <GoogleSignInButton classes='bg-purple-500 hover:text-gray-100 hover:bg-purple-700'>
+              Sign In
+            </GoogleSignInButton>
           </div>
         </div>
 
