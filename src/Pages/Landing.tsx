@@ -8,15 +8,12 @@ import { LandingNavBar } from '../Components/NavBar';
 const Landing: FunctionComponent = () => {
   const navigate = useNavigate();
   const auth = useAuth();
+  const { userObject } = useAuth();
 
-  // TODO: Uncomment this
   useEffect(() => {
-    if (auth.userObject) {
-      console.log(auth.userObject);
+    if (auth.token) {
+      navigate('/app/dashboard');
     }
-    // if (auth.token) {
-    //   navigate('/app/dashboard');
-    // }
   }, [auth]);
 
   return (
