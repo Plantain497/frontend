@@ -51,7 +51,9 @@ export const AuthProvider: FunctionComponent = props => {
   };
 
   const setProfileObj = (e: any) => {
+    // As soon as Google signs us in, we want to store the profile + redirect
     setUserObject(e.profileObj);
+    navigate('/app/dashboard');
   };
 
   // @ts-ignore
@@ -65,7 +67,7 @@ export const AuthProvider: FunctionComponent = props => {
     ...googleLoginCommon,
     onLogoutSuccess: () => {
       setUserObject(undefined);
-      navigate('/app/login');
+      navigate('/');
     },
   });
 
