@@ -1,4 +1,5 @@
 import React, { FunctionComponent, ReactElement, useState } from 'react';
+import { useAuth } from '../Auth';
 import { Hamburger, LargeNavButton, SmallNavButton } from '../Buttons';
 import { AppContainer } from '../Containers';
 import { ImageDropdown } from '../Dropdown';
@@ -10,6 +11,7 @@ import { Notifications } from './Notifications';
 const NavBar: FunctionComponent = (): ReactElement => {
   const [selected, setSelected] = useState<string>('Dashboard');
   const [hamburgerOpen, setHamburgerOpen] = useState<boolean>(false);
+  const { signOut } = useAuth();
 
   return (
     <nav className='bg-gray-800'>
@@ -73,7 +75,7 @@ const NavBar: FunctionComponent = (): ReactElement => {
               dropdownElements={[
                 { label: 'Your Profile' },
                 { label: 'Settings' },
-                { label: 'Sign Out' },
+                { label: 'Sign Out', onClick: signOut },
               ]}
             />
           </div>

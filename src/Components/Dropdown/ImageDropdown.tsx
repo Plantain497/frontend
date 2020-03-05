@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from 'react';
 interface IDropdownElement {
   label: string;
   href?: string;
+  onClick?(): void;
 }
 
 interface IImageDropdown {
@@ -73,6 +74,7 @@ const ImageDropdown = ({
                     <a
                       href={element.href}
                       key={index}
+                      onClick={element.onClick}
                       className='block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100'
                     >
                       {element.label}
