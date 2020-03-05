@@ -75,7 +75,7 @@ const ImageDropdown = ({
                       href={element.href}
                       key={index}
                       onClick={element.onClick}
-                      className='block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100'
+                      className='block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100'
                     >
                       {element.label}
                     </a>

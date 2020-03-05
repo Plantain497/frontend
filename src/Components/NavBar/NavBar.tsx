@@ -3,7 +3,6 @@ import { useAuth } from '../Auth';
 import { Hamburger, LargeNavButton, SmallNavButton } from '../Buttons';
 import { AppContainer } from '../Containers';
 import { ImageDropdown } from '../Dropdown';
-import Avatar from './Avatar.jpg';
 import { ReactComponent as Logo } from './Logo.svg';
 import { ReactComponent as LogoFull } from './LogoFull.svg';
 import { Notifications } from './Notifications';
@@ -11,7 +10,7 @@ import { Notifications } from './Notifications';
 const NavBar: FunctionComponent = (): ReactElement => {
   const [selected, setSelected] = useState<string>('Dashboard');
   const [hamburgerOpen, setHamburgerOpen] = useState<boolean>(false);
-  const { signOut } = useAuth();
+  const { userObject, signOut } = useAuth();
 
   return (
     <nav className='bg-gray-800'>
@@ -69,7 +68,7 @@ const NavBar: FunctionComponent = (): ReactElement => {
               dropdownElements={[{ label: 'React Scheduler Overdue' }]}
             />
             <ImageDropdown
-              imgSrc={Avatar}
+              imgSrc={userObject?.imageUrl}
               imgClasses={'w-8 h-8 rounded-full'}
               classes={'relative ml-3'}
               dropdownElements={[
