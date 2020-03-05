@@ -40,7 +40,7 @@ const Notifications = ({ classes, dropdownElements }: INotifications) => {
 
   return (
     // tslint:disable-next-line: no-unsafe-any
-    <button className='p-1 text-gray-400 transition duration-150 ease-in-out border-2 border-transparent rounded-full hover:text-white focus:outline-none focus:text-white focus:bg-gray-700'>
+    <span className='p-1 text-gray-400 transition duration-150 ease-in-out border-2 border-transparent rounded-full hover:text-white focus:outline-none focus:text-white focus:bg-gray-700'>
       <div ref={node} className={classes}>
         <button
           className='flex items-center max-w-xs text-sm transition duration-150 ease-in-out rounded-full focus:outline-none'
@@ -80,7 +80,7 @@ const Notifications = ({ classes, dropdownElements }: INotifications) => {
           )}
         </AnimatePresence>
       </div>
-    </button>
+    </span>
   );
 };
 
