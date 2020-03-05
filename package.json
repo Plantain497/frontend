@@ -41,7 +41,6 @@
     "glob-all": "^3.1.0",
     "prettier": "^1.19.1",
     "purgecss-webpack-plugin": "^2.1.0",
-    "react-app-rewired": "^2.1.5",
     "react-scripts": "^3.4.0",
     "set-value": "^3.0.1",
     "tailwindcss": "^1.2.0",
@@ -53,7 +52,7 @@
   "scripts": {
     "tailwind": "tailwind build ./src/index.tailwind.css -c ./tailwind.config.js -o ./src/index.css",
     "start": "yarn tailwind && react-scripts start",
-    "build": "yarn tailwind && react-app-rewired build",
+    "build": "yarn tailwind && react-scripts build",
     "lint": "tslint --project tsconfig.json --config tslint.json -t stylish -r node_modules/tslint-microsoft-contrib",
     "lint:fix": "tslint --project tsconfig.json --config tslint.json --fix -t stylish -r node_modules/tslint-microsoft-contrib",
     "test": "react-scripts test",
