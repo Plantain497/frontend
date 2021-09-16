@@ -42,7 +42,7 @@
     "prettier": "^1.19.1",
     "purgecss-webpack-plugin": "^2.1.0",
     "react-scripts": "^3.4.0",
-    "set-value": "^3.0.1",
+    "set-value": "^4.0.1",
     "tailwindcss": "^1.2.0",
     "tslint": "^6.0.0",
     "tslint-microsoft-contrib": "^6.2.0",
